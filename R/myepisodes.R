@@ -3,6 +3,7 @@
 #' Various functions to play with MyEpisodes data
 #' @docType package
 #' @name myepisodes
+#' @import XML
 #' @aliases myepisodes package-myepisodes
 NULL
 
