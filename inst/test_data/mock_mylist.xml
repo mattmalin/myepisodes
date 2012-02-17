@@ -1,0 +1,25 @@
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>my_username List</title>
+		<link>http://www.myepisodes.com/</link>
+		<image>
+			 <url>http://www.myepisodes.com/img/myepisodes_logo.jpg</url>
+			 <title>www.myepisodes.com</title>
+			 <link>http://www.myepisodes.com/</link>
+		</image>
+		<description>www.MyEpisodes.com is a personlized and highly customizable digitized tv-guides capable of tuning itself for your watching habits.</description>
+		<language>en-us</language>
+					<item>
+						<guid isPermaLink="false">1234-5-6</guid>
+						<title>[ Mock Show (1901) ][ 01x01 ][ Awesome Title ][ 17-Feb-1901 ]</title>
+						<link>http://www.google.com/search?q=bsg+is+great</link>
+						<description>Random description text</description>
+					</item>
+					<item>
+						<guid isPermaLink="false">1234-5-6</guid>
+						<title>[ Another Mock Show (2012) ][ 01x01 ][ Another Awesome Title ][ 17-Feb-2012 ]</title>
+						<link>http://www.google.com/search?q=breaking+bad+is+great</link>
+						<description>More random description text</description>
+					</item>
+	</channel>
+</rss>		
