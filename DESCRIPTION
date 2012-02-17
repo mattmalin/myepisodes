@@ -1,0 +1,7 @@
+Package: myepisodes
+Version: 0.0.1
+Date: 2012-02-17
+Title: MyEpisodes RSS/API functions
+Author: Matt Malin <R@mattmalin.co.uk>
+Description: MyEpisodes stats and useful functions
+License: GPL (>= 2)
