@@ -25,13 +25,22 @@ test_that("given appropriate feed XML, shows are separated to individual element
   mylist_xml <- file.path(.test_dir, "test_data", "mock_mylist.xml")
   expect_that(file.exists(mylist_xml), is_identical_to(TRUE))
   
-  # tests currently are only for XML functions themselves, mocking up 
-  # implementation in the test so far
-  mylist <- xmlTreeParse(mylist_xml, getDTD = FALSE)
-  r <- xmlRoot(mylist)
-
-  episodes <- r[["channel"]][sapply(xmlChildren(r[[1]]), xmlName) == "item"]
-  
-  expect_that(xmlValue(episodes[[1]][["title"]]), is_identical_to("[ Mock Show (1901) ][ 01x01 ][ Awesome Title ][ 17-Feb-1901 ]"))
-  expect_that(xmlValue(episodes[[2]][["title"]]), is_identical_to("[ Another Mock Show (2012) ][ 01x01 ][ Another Awesome Title ][ 17-Feb-2012 ]"))
+  expected_tvshows <- list(
+    item = list(
+	  show_name = "Mock Show (1901)",
+	  season = as.integer(1),
+	  ep = as.integer(1),
+	  ep_title = "Awesome Title",
+	  date_aired = "17-Feb-1901"	  
+	),
+	item = list(
+	  show_name = "Another Mock Show (2012)",
+	  season = as.integer(4),
+	  ep = as.integer(5),
+	  ep_title = "Another Awesome Title",
+	  date_aired = "17-Feb-2012"	  
+	)
+  )
+    
+  expect_that(shows_from_xml(mylist_xml), is_identical_to(expected_tvshows))
 })

@@ -39,3 +39,42 @@ feed_url <- function(uid, pwdmd5, feed = "mylist", onlyunacquired = TRUE, showig
 	sep = "")
   return(feed_url)
 }
+
+xml_shows <- function(myepisodes_feed_url) {
+  # tests currently are only for XML functions themselves, mocking up 
+  # implementation in the test so far
+  myepisodes_feed <- xmlTreeParse(myepisodes_feed_url, getDTD = FALSE)
+  r <- xmlRoot(myepisodes_feed)
+
+  episodes <- r[["channel"]][sapply(xmlChildren(r[[1]]), xmlName) == "item"]
+  
+  return(episodes)
+}
+
+shows_from_xml <- function(myepisodes_feed_url) {
+  episodes <- xml_shows(myepisodes_feed_url)
+  lapply(episodes, show_info_from_xml)
+}
+
+show_info_from_xml <- function(xml_show) {
+  xml_title <- xmlValue(xml_show[["title"]])
+
+  myepisodes_grep_pattern <- "\\[ (.+) \\]\\[ 0*(\\d+)x([0-9]+{2}[0-9]?) \\]\\[ (.+) \\]\\[ (.+) \\]"
+  
+  show_name <- gsub(myepisodes_grep_pattern, "\\1", xml_title)
+  season <- as.integer(gsub(myepisodes_grep_pattern, "\\2", xml_title))
+  ep <- as.integer(gsub(myepisodes_grep_pattern, "\\3", xml_title))
+  ep_title   <- gsub(myepisodes_grep_pattern, "\\4", xml_title)
+  date_aired <- gsub(myepisodes_grep_pattern, "\\5", xml_title)
+  
+  return(list(
+    show_name = show_name,
+	season = season,
+	ep = ep,
+	ep_title = ep_title,
+	date_aired = date_aired
+	)
+  )
+}
+
+
