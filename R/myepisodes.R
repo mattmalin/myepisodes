@@ -40,20 +40,18 @@ feed_url <- function(uid, pwdmd5, feed = "mylist", onlyunacquired = TRUE, showig
   return(feed_url)
 }
 
+shows_from_xml <- function(myepisodes_feed_url) {
+  episodes <- xml_shows(myepisodes_feed_url)
+  lapply(episodes, show_info_from_xml)
+}
+
 xml_shows <- function(myepisodes_feed_url) {
-  # tests currently are only for XML functions themselves, mocking up 
-  # implementation in the test so far
   myepisodes_feed <- xmlTreeParse(myepisodes_feed_url, getDTD = FALSE)
   r <- xmlRoot(myepisodes_feed)
 
   episodes <- r[["channel"]][sapply(xmlChildren(r[[1]]), xmlName) == "item"]
   
   return(episodes)
-}
-
-shows_from_xml <- function(myepisodes_feed_url) {
-  episodes <- xml_shows(myepisodes_feed_url)
-  lapply(episodes, show_info_from_xml)
 }
 
 show_info_from_xml <- function(xml_show) {
@@ -76,5 +74,3 @@ show_info_from_xml <- function(xml_show) {
 	)
   )
 }
-
-
