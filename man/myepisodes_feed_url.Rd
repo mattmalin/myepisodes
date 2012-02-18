@@ -29,6 +29,6 @@
 myepisodes_feed_url("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)
 }
 \author{
-  Matt Malin <\email{R@mattmalin.co.uk}>
+  Matt Malin <\email{email@mattmalin.co.uk}>
 }
 

@@ -7,4 +7,7 @@
 \description{
   Various functions to play with MyEpisodes data
 }
+\author{
+  Matt Malin <\email{email@mattmalin.co.uk}>
+}
 
