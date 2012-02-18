@@ -8,5 +8,6 @@ Currently useful for extracting show info for a given feed, for example:
 my_username <- "my_username"
 my_password <- "1234567890abcdef123456789abcdef1"
 
-shows_from_myepisodes(my_username, my_password, "mylist", TRUE, FALSE)
+shows <- shows_from_myepisodes(my_username, my_password, "mylist", TRUE, FALSE)
+summary_of_shows(shows)
 ```
