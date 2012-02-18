@@ -20,12 +20,12 @@ NULL
 #' @param showignored TRUE/FALSE - You can use this to decide if you want the 
 #' feed to show your ignored shows too.
 #' @author Matt Malin <\email{R@@mattmalin.co.uk}>
-#' @examples feed_url("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)
+#' @examples myepisodes_feed_url("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)
 #' @export
-feed_url <- function(uid, pwdmd5, feed = "mylist", onlyunacquired = TRUE, showignored = FALSE) {
+myepisodes_feed_url <- function(uid, pwdmd5, feed = "mylist", onlyunacquired = TRUE, showignored = FALSE) {
   # there are currently six feeds available
   # mylist, today, yesterday, tomorrow, unacquired, unwatched, all
-  feed_url <- paste(
+  myepisodes_feed_url <- paste(
     "http://www.myepisodes.com/rss.php?feed=",
 	feed,
 	"&onlyunacquired=",
@@ -37,10 +37,10 @@ feed_url <- function(uid, pwdmd5, feed = "mylist", onlyunacquired = TRUE, showig
 	"&pwdmd5=",
 	pwdmd5,
 	sep = "")
-  return(feed_url)
+  return(myepisodes_feed_url)
 }
 
-shows_from_xml <- function(myepisodes_feed_url) {
+shows_from_myepisodes_feed <- function(myepisodes_feed_url) {
   episodes <- xml_shows(myepisodes_feed_url)
   lapply(episodes, show_info_from_xml)
 }
