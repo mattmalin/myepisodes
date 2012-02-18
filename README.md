@@ -1,6 +1,6 @@
 # myepisodes
 
-These are for functions acessing the MyEpisodes RSS feeds to extract myepisodes info in R.
+These are for functions accessing the MyEpisodes RSS feeds to extract myepisodes info in R.
 
 Currently useful for extracting show info for a given feed, for example:
 
