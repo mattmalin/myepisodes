@@ -21,7 +21,7 @@ NULL
 #' @param showignored TRUE/FALSE - You can use this to decide if you want the 
 #' feed to show your ignored shows too.
 #' @author Matt Malin <\email{email@@mattmalin.co.uk}>
-#' @examples myepisodes_feed_url("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)
+#' @examples \dontrun{myepisodes_feed_url("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)}
 #' @export
 myepisodes_feed_url <- function(uid, pwdmd5, feed = "mylist", onlyunacquired = TRUE, showignored = FALSE) {
   # there are currently six feeds available
@@ -49,7 +49,7 @@ myepisodes_feed_url <- function(uid, pwdmd5, feed = "mylist", onlyunacquired = T
 #' @param myepisodes_feed_url path to a MyEpisodes RSS feed
 #' @return list, containing show info
 #' @seealso \link{show_info_from_xml},  \link{myepisodes_feed_url}
-#' @examples shows_from_myepisodes_feed(myepisodes_feed_url("user", "password"))
+#' @examples \dontrun{shows_from_myepisodes_feed(myepisodes_feed_url("user", "password"))}
 #'   mock_feed_url <- file.path(system.file(package = "myepisodes"), "test_data/mock_mylist.xml")
 #'   shows_from_myepisodes_feed(mock_feed_url)
 #' @author Matt Malin <\email{email@@mattmalin.co.uk}>
@@ -74,7 +74,7 @@ shows_from_myepisodes_feed <- function(myepisodes_feed_url) {
 #' @param showignored TRUE/FALSE - You can use this to decide if you want the 
 #' feed to show your ignored shows too.
 #' @author Matt Malin <\email{email@@mattmalin.co.uk}>
-#' @examples shows_from_myepisodes("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)
+#' @examples \dontrun{shows_from_myepisodes("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)}
 #' @seealso \link{shows_from_myepisodes_feed}, \link{myepisodes_feed_url}
 #' @return list of lists of episode information
 #' @export
@@ -92,7 +92,7 @@ shows_from_myepisodes <- function(uid, pwdmd5, feed = "mylist", onlyunacquired =
 #' @return XMLNodeList with all \"item\"s from feed, corresponding to episodes
 #' @author Matt Malin <\email{email@@mattmalin.co.uk}>
 #' @export
-#' @examples xml_shows_from_myepisodes_feed(myepisodes_feed_url("user", "password"))
+#' @examples \dontrun{xml_shows_from_myepisodes_feed(myepisodes_feed_url("user", "password"))}
 #'   mock_feed_url <- file.path(system.file(package = "myepisodes"), "test_data/mock_mylist.xml")
 #'   xml_shows_from_myepisodes_feed(mock_feed_url)
 xml_shows_from_myepisodes_feed <- function(myepisodes_feed_url) {
@@ -155,7 +155,7 @@ show_info_from_xml <- function(xml_show) {
 #' left padding the episode number to max_length (default 2) if necessary.
 #'
 #' @param show_item a show item list, typically from \link{show_info_from_xml}
-#' @param max_length=2 the length to pad episode numbers to, usually 2 is standard.
+#' @param max_length the length to pad episode numbers to, usually 2 is standard.
 #' @return character of form NxNN
 #' @author Matt Malin <\email{email@@mattmalin.co.uk}>
 #' @export

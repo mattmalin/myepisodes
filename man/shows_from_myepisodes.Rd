@@ -30,7 +30,7 @@
   episode information as a list of show information lists.
 }
 \examples{
-shows_from_myepisodes("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)
+\dontrun{shows_from_myepisodes("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)}
 }
 \author{
   Matt Malin <\email{email@mattmalin.co.uk}>

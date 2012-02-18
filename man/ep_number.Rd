@@ -8,7 +8,7 @@
   \item{show_item}{a show item list, typically from
   \link{show_info_from_xml}}
 
-  \item{max_length=2}{the length to pad episode numbers to,
+  \item{max_length}{the length to pad episode numbers to,
   usually 2 is standard.}
 }
 \value{

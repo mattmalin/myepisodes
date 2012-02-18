@@ -26,7 +26,7 @@
   feed.
 }
 \examples{
-myepisodes_feed_url("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)
+\dontrun{myepisodes_feed_url("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)}
 }
 \author{
   Matt Malin <\email{email@mattmalin.co.uk}>

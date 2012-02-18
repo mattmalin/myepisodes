@@ -17,7 +17,7 @@
   XML referencing functions.
 }
 \examples{
-xml_shows_from_myepisodes_feed(myepisodes_feed_url("user", "password"))
+\dontrun{xml_shows_from_myepisodes_feed(myepisodes_feed_url("user", "password"))}
   mock_feed_url <- file.path(system.file(package = "myepisodes"), "test_data/mock_mylist.xml")
   xml_shows_from_myepisodes_feed(mock_feed_url)
 }
