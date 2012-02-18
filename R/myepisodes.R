@@ -74,3 +74,13 @@ show_info_from_xml <- function(xml_show) {
 	)
   )
 }
+
+ep_number <- function(show_item, max_length = 2) {
+  padded_ep <- paste(rep("0", length = 2 - nchar(format(show_item$ep))), show_item$ep, sep = "")
+  ep_number <- paste(show_item$season, padded_ep, sep = "x")
+  return(ep_number)
+}
+
+summary_of_shows <- function(shows) {
+  as.character(sapply(shows, FUN = function(item) paste(item$show_name, " - ", ep_number(item), sep = "")))
+}

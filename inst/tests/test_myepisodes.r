@@ -36,11 +36,16 @@ test_that("given appropriate feed XML, shows are separated to individual element
 	item = list(
 	  show_name = "Another Mock Show (2012)",
 	  season = as.integer(4),
-	  ep = as.integer(5),
+	  ep = as.integer(12),
 	  ep_title = "Another Awesome Title",
 	  date_aired = "17-Feb-2012"	  
 	)
   )
     
+  expected_tvshows_summary <- c(
+    "Mock Show (1901) - 1x01",
+    "Another Mock Show (2012) - 4x12"
+  )
   expect_that(shows_from_myepisodes_feed(mylist_xml), is_identical_to(expected_tvshows))
+  expect_that(summary_of_shows(expected_tvshows), is_identical_to(expected_tvshows_summary))
 })
