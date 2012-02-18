@@ -59,6 +59,29 @@ shows_from_myepisodes_feed <- function(myepisodes_feed_url) {
   lapply(episodes, show_info_from_xml)
 }
 
+#' Get info from shows given desired MyEpisodes feed information
+#'
+#' Given MyEpisodes username and md5 hashed password, along with desired
+#' list and other settings, gets show and episode information as a 
+#' list of show information lists.
+#' @param uid myepisodes username
+#' @param pwdmd5 myepisodes MD5 hashed password
+#' @param feed the desired feed 
+#' currently there are: mylist, today, yesterday, tomorrow, unacquired, 
+#' unwatched, all.
+#' @param onlyunacquired TRUE/FALSE - You can use this to decide if you only 
+#' want the feed to list the episodes you haven't acquired.
+#' @param showignored TRUE/FALSE - You can use this to decide if you want the 
+#' feed to show your ignored shows too.
+#' @author Matt Malin <\email{email@@mattmalin.co.uk}>
+#' @examples shows_from_myepisodes("foouser", "321654321654321", feed = "mylist", onlyunacquired = TRUE, showignored = FALSE)
+#' @seealso \link{shows_from_myepisodes_feed}, \link{myepisodes_feed_url}
+#' @return list of lists of episode information
+#' @export
+shows_from_myepisodes <- function(uid, pwdmd5, feed = "mylist", onlyunacquired = TRUE, showignored = FALSE) {
+   shows_from_myepisodes_feed(myepisodes_feed_url(uid, pwdmd5, feed, onlyunacquired, showignored))
+}
+
 #' Get shows from given MyEpisode feeds (retaining individual XML structure)
 #' 
 #' Given a MyEpisodes feed, outputs shows separately as an XMLNodeList
@@ -73,7 +96,12 @@ shows_from_myepisodes_feed <- function(myepisodes_feed_url) {
 #'   mock_feed_url <- file.path(system.file(package = "myepisodes"), "test_data/mock_mylist.xml")
 #'   xml_shows_from_myepisodes_feed(mock_feed_url)
 xml_shows_from_myepisodes_feed <- function(myepisodes_feed_url) {
+  if(length(getXMLErrors(myepisodes_feed_url)) == 0) {
   myepisodes_feed <- xmlTreeParse(myepisodes_feed_url, getDTD = FALSE)
+  } else {
+    stop("feed is not valid, check user/pass, feed type or if MyEpisodes.com is down.")
+  }
+  
   r <- xmlRoot(myepisodes_feed)
 
   episodes <- r[["channel"]][sapply(xmlChildren(r[[1]]), xmlName) == "item"]

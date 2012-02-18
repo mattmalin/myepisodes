@@ -1,6 +1,7 @@
 export(ep_number)
 export(myepisodes_feed_url)
 export(show_info_from_xml)
+export(shows_from_myepisodes)
 export(shows_from_myepisodes_feed)
 export(summary_of_shows)
 export(xml_shows_from_myepisodes_feed)
