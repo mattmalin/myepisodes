@@ -97,7 +97,7 @@ shows_from_myepisodes <- function(uid, pwdmd5, feed = "mylist", onlyunacquired =
 #'   xml_shows_from_myepisodes_feed(mock_feed_url)
 xml_shows_from_myepisodes_feed <- function(myepisodes_feed_url) {
   if(length(getXMLErrors(myepisodes_feed_url)) == 0) {
-  myepisodes_feed <- xmlTreeParse(myepisodes_feed_url, getDTD = FALSE)
+    myepisodes_feed <- xmlTreeParse(myepisodes_feed_url, getDTD = FALSE)
   } else {
     stop("feed is not valid, check user/pass, feed type or if MyEpisodes.com is down.")
   }
