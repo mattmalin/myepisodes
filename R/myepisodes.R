@@ -139,12 +139,16 @@ show_info_from_xml <- function(xml_show) {
   ep_title   <- gsub(myepisodes_grep_pattern, "\\4", xml_title)
   date_aired <- gsub(myepisodes_grep_pattern, "\\5", xml_title)
   
+  guid <- xmlValue(xml_show[["guid"]])
+  showid <- strsplit(guid, split = "-")[[1]][1]
+  
   return(list(
     show_name = show_name,
 	season = season,
 	ep = ep,
 	ep_title = ep_title,
-	date_aired = date_aired
+	date_aired = date_aired,
+	showid = showid
 	)
   )
 }
@@ -185,4 +189,28 @@ ep_number <- function(show_item, max_length = 2) {
 #'   summary_of_shows(mock_shows)
 summary_of_shows <- function(shows) {
   as.character(sapply(shows, FUN = function(item) paste(item$show_name, " - ", ep_number(item), sep = "")))
+}
+
+update_episode <- function(tv_episode, seen = TRUE) {
+  # marks episode as acquired or seen (based on if seen = TRUE/FALSE)
+  myepisodes_update_url <- paste(
+    "http://www.myepisodes.com/myshows.php?action=Update&showid=",
+    tv_episode$showid,
+	"&season=",
+	tv_episode$season,
+	"&episode=",
+	tv_episode$ep,
+	"&seen=",
+	ifelse(isTRUE(seen), 1, 0),
+	sep = "")
+  browseURL(myepisodes_update_url)
+  return(myepisodes_update_url)
+}
+
+mark_episode_as_watched(tv_episode) {
+  update_episode(tv_episode, seen = TRUE)
+}
+
+mark_episode_as_acquired(tv_episode) {
+  update_episode(tv_episode, seen = FALSE)
 }
