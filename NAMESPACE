@@ -1,4 +1,6 @@
 export(ep_number)
+export(mark_episode_as_acquired)
+export(mark_episode_as_watched)
 export(myepisodes_feed_url)
 export(show_info_from_xml)
 export(shows_from_myepisodes)
