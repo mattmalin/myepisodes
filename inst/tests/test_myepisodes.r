@@ -22,6 +22,8 @@ test_that("feed urls are returned correctly", {
 })
 
 test_that("given appropriate feed XML, shows are separated to individual elements", {
+  # there should be more individual tests, but this captures the expected behaviour
+  # of most functions as they are chained together
   mylist_xml <- file.path(.test_dir, "test_data", "mock_mylist.xml")
   expect_that(file.exists(mylist_xml), is_identical_to(TRUE))
   

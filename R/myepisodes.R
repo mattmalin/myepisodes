@@ -251,6 +251,6 @@ mark_episode_as_watched <- function(tv_episode) {
 #' myepisodes.
 #' @author Matt Malin <\email{email@@mattmalin.co.uk}>
 #' @export
-mark_episode_as_acquired<- function(tv_episode) {
+mark_episode_as_acquired <- function(tv_episode) {
   update_episode(tv_episode, seen = FALSE)
 }
