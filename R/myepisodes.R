@@ -207,10 +207,10 @@ update_episode <- function(tv_episode, seen = TRUE) {
   return(myepisodes_update_url)
 }
 
-mark_episode_as_watched(tv_episode) {
+mark_episode_as_watched <- function(tv_episode) {
   update_episode(tv_episode, seen = TRUE)
 }
 
-mark_episode_as_acquired(tv_episode) {
+mark_episode_as_acquired<- function(tv_episode) {
   update_episode(tv_episode, seen = FALSE)
 }
