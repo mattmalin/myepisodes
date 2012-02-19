@@ -234,6 +234,10 @@ update_episode <- function(tv_episode, seen = TRUE) {
 #' myepisodes.
 #' @author Matt Malin <\email{email@@mattmalin.co.uk}>
 #' @export
+#' @examples \dontrun{
+#'   mock_feed_url <- file.path(system.file(package = "myepisodes"), "test_data/mock_mylist.xml")
+#'   mock_shows <- shows_from_myepisodes_feed(mock_feed_url)
+#'   mark_episode_as_watched(mock_shows[[1]])}
 mark_episode_as_watched <- function(tv_episode) {
   update_episode(tv_episode, seen = TRUE)
 }
@@ -251,6 +255,10 @@ mark_episode_as_watched <- function(tv_episode) {
 #' myepisodes.
 #' @author Matt Malin <\email{email@@mattmalin.co.uk}>
 #' @export
+#' @examples \dontrun{
+#'   mock_feed_url <- file.path(system.file(package = "myepisodes"), "test_data/mock_mylist.xml")
+#'   mock_shows <- shows_from_myepisodes_feed(mock_feed_url)
+#'   mark_episode_as_acquired(mock_shows[[1]])}
 mark_episode_as_acquired <- function(tv_episode) {
   update_episode(tv_episode, seen = FALSE)
 }

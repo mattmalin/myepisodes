@@ -21,6 +21,12 @@
   here, it currently loads a browser at the appropriate
   update link.
 }
+\examples{
+\dontrun{
+  mock_feed_url <- file.path(system.file(package = "myepisodes"), "test_data/mock_mylist.xml")
+  mock_shows <- shows_from_myepisodes_feed(mock_feed_url)
+  mark_episode_as_watched(mock_shows[[1]])}
+}
 \author{
   Matt Malin <\email{email@mattmalin.co.uk}>
 }
