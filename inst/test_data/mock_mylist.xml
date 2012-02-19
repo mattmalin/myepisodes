@@ -10,13 +10,13 @@
 		<description>www.MyEpisodes.com is a personlized and highly customizable digitized tv-guides capable of tuning itself for your watching habits.</description>
 		<language>en-us</language>
 					<item>
-						<guid isPermaLink="false">1234-5-6</guid>
+						<guid isPermaLink="false">1234-1-1</guid>
 						<title>[ Mock Show (1901) ][ 01x01 ][ Awesome Title ][ 17-Feb-1901 ]</title>
 						<link>http://www.google.com/search?q=bsg+is+great</link>
 						<description>Random description text</description>
 					</item>
 					<item>
-						<guid isPermaLink="false">1234-5-7</guid>
+						<guid isPermaLink="false">5678-4-12</guid>
 						<title>[ Another Mock Show (2012) ][ 04x12 ][ Another Awesome Title ][ 17-Feb-2012 ]</title>
 						<link>http://www.google.com/search?q=breaking+bad+is+great</link>
 						<description>More random description text</description>
