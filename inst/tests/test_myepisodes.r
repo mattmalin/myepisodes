@@ -22,6 +22,8 @@ test_that("feed urls are returned correctly", {
 })
 
 test_that("given appropriate feed XML, shows are separated to individual elements", {
+  # there should be more individual tests, but this captures the expected behaviour
+  # of most functions as they are chained together
   mylist_xml <- file.path(.test_dir, "test_data", "mock_mylist.xml")
   expect_that(file.exists(mylist_xml), is_identical_to(TRUE))
   
@@ -31,14 +33,16 @@ test_that("given appropriate feed XML, shows are separated to individual element
 	  season = as.integer(1),
 	  ep = as.integer(1),
 	  ep_title = "Awesome Title",
-	  date_aired = "17-Feb-1901"	  
+	  date_aired = "17-Feb-1901",
+      showid = "1234"	  
 	),
 	item = list(
 	  show_name = "Another Mock Show (2012)",
 	  season = as.integer(4),
 	  ep = as.integer(12),
 	  ep_title = "Another Awesome Title",
-	  date_aired = "17-Feb-2012"	  
+	  date_aired = "17-Feb-2012",
+      showid = "5678"
 	)
   )
     
