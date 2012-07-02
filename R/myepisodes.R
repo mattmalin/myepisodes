@@ -89,7 +89,7 @@ shows_from_myepisodes <- function(uid, pwdmd5, feed = "mylist", onlyunacquired =
 #' @param myepisodes_feed_url path to a MyEpisodes RSS feed
 #' @seealso \link{show_info_from_xml},  \link{myepisodes_feed_url}, 
 #' \link{shows_from_myepisodes_feed}
-#' @return XMLNodeList with all \"item\"s from feed, corresponding to episodes
+#' @return XMLNodeList with all "item"s from feed, corresponding to episodes
 #' @author Matt Malin <\email{email@@mattmalin.co.uk}>
 #' @export
 #' @examples \dontrun{xml_shows_from_myepisodes_feed(myepisodes_feed_url("user", "password"))}
@@ -115,7 +115,7 @@ xml_shows_from_myepisodes_feed <- function(myepisodes_feed_url) {
 #' of individual items in MyEpisodes feeds, returns a list for a given show
 #' containing show_name, season, ep, ep_title, and date_aired.
 #'
-#' @param xml_show XMLNode of \"item\" child from MyEpisodes feed
+#' @param xml_show XMLNode of "item" child from MyEpisodes feed
 #' @return list for individual show
 #' @author Matt Malin <\email{email@@mattmalin.co.uk}>
 #' @export
@@ -177,7 +177,7 @@ ep_number <- function(show_item, max_length = 2) {
 #' Display summary of all the tv episodes in a list
 #'
 #' Given a list of shows (in form from \link{show_info_from_xml}) will display
-#' a summary, displaying each episode of the form \"show_name - SxNN\"
+#' a summary, displaying each episode of the form "show_name - SxNN"
 #'
 #' @param shows list of shows as in form from \link{show_info_from_xml}
 #' @return character vector summarising each show

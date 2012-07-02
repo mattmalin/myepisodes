@@ -14,7 +14,7 @@
 \description{
   Given a list of shows (in form from
   \link{show_info_from_xml}) will display a summary,
-  displaying each episode of the form \"show_name - SxNN\"
+  displaying each episode of the form "show_name - SxNN"
 }
 \examples{
 mock_feed_url <- file.path(system.file(package = "myepisodes"), "test_data/mock_mylist.xml")

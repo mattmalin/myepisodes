@@ -8,8 +8,8 @@
   \item{myepisodes_feed_url}{path to a MyEpisodes RSS feed}
 }
 \value{
-  XMLNodeList with all \"item\"s from feed, corresponding
-  to episodes
+  XMLNodeList with all "item"s from feed, corresponding to
+  episodes
 }
 \description{
   Given a MyEpisodes feed, outputs shows separately as an

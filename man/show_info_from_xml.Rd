@@ -5,7 +5,7 @@
   show_info_from_xml(xml_show)
 }
 \arguments{
-  \item{xml_show}{XMLNode of \"item\" child from MyEpisodes
+  \item{xml_show}{XMLNode of "item" child from MyEpisodes
   feed}
 }
 \value{
