@@ -1,3 +1,6 @@
+* myepisodes 1.1.0
+can now update shows on myepisodes as acquired/seen
+
 * myepisodes 1.0.0
 wrapper up functionality of RSS passing into shows_from_myepisodes to give
 details of shows in a given myepisodes feed.
